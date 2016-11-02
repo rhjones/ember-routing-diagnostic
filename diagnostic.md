@@ -6,21 +6,29 @@ Record your responses inside the fenced code blocks below each question.
     and what are the main task(s) you perform inside an Ember Route?
 
     ```md
-    <!-- your response here -->
+
+    Inside of the router, you define your routes (`this.route('about')`).
+    Inside of the route, you set up your model hook/define your interactions
+    with data.
+
     ```
 
 1.  What is the command to generate a route named `boston` nested under
     `campus`?
 
     ```md
-    <!-- your response here -->
+    
+    ember g route campus/boston
+
     ```
 
 1.  Suppose you have a nested route at the URL `/campus/boston`. How would you
     use the `link-to` helper to generate an appropriate link?
 
     ```md
-    <!-- your response here -->
+    
+    {{#link-to 'campus.boston'}}Boston Campus{{/link-to}}
+
     ```
 
 1.  Explain **at least** two differences between the following two route
@@ -35,7 +43,14 @@ Record your responses inside the fenced code blocks below each question.
     ```
 
     ```md
-    <!-- your response here -->
+    
+    The first definition is a nested route. The URL for the parent route will
+    look like /products, and the child route (which on its own is something
+    like /7) will look like /products/7.
+
+    The second is a single route that looks like /products/7, with no 'parent'
+    products route.
+
     ```
 
 1.  Suppose we have the following route definition:
@@ -48,11 +63,18 @@ Record your responses inside the fenced code blocks below each question.
     value `'123'` inside a Route?
 
     ```md
-    <!-- your response here -->
+    
+    We'll pass `params` to the model hook as an argument and use
+    params.movie_id to access the id.
+
     ```
 
 1.  Inside a template, how do we reference data provided by a Route?
 
     ```md
-    <!-- your response here -->
+    
+    Data is passed from a route to a template as `model`, so we can use
+    {{model}} to access it. If it's an array of data, we can use something
+    like {{#each model as |product|}} (do stuff here) {{/each}}.
+
     ```
